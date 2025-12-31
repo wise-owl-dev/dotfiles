@@ -55,3 +55,40 @@ sudo apt update
 sudo apt install suckless-tools
 ~~~
 This installs dmenu along with dwm, st, etc. from the Debian repositories, providing a stable, pre-configured version.         
+
+
+## Nerdfont
+1️⃣ Descomprime el zip
+
+Ve a donde tengas el archivo:
+
+cd ~/Descargas
+unzip NombreDeLaNerdFont.zip
+
+
+Si no tienes unzip:
+
+sudo apt install unzip
+
+2️⃣ Crea la carpeta de fuentes del usuario
+mkdir -p ~/.local/share/fonts
+
+3️⃣ Copia solo los .ttf / .otf
+cp *.ttf ~/.local/share/fonts/
+# o
+cp *.otf ~/.local/share/fonts/
+
+
+Si el zip trae subcarpetas:
+
+find . -name "*.ttf" -exec cp {} ~/.local/share/fonts/ \;
+
+4️⃣ Actualiza la caché de fuentes
+fc-cache -fv
+
+5️⃣ Verifica que esté instalada
+fc-list | grep -i nerd
+
+## Picom
+Para instalar Picom en Debian 13 (Trixie), primero
+actualiza tu sistema y luego usa sudo apt install picom
