@@ -1,0 +1,11 @@
+# Archivos sensibles
+*.log
+*.cache
+.zcompdump*
+.env
+
+# Historial
+.zsh_history
+
+# OS
+.DS_Store
